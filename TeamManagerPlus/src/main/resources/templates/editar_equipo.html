@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Editar Equipo</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Editar Equipo</h1>
+        <br />
+        <form action="#" th:action="@{/save}" th:object="${equipo}" method="post">
+ 
+            <table border="0" cellpadding="10">
+                <tr>             
+                    <td>Equipo ID:</td>
+                    <td>
+                        <input type="text" th:field="*{id}" readonly="readonly" />
+                    </td>
+                </tr>     
+                <tr>
+                    <td>Nombre Equipo:</td>
+                    <td><input type="text" th:field="*{nombre}" /></td>
+                </tr>
+                <tr>
+                    <td>Partidos Jugados:</td>
+                    <td><input type="text" th:field="*{jugados}" /></td>
+                </tr>
+                <tr>
+                    <td>Partidos Ganados:</td>
+                    <td><input type="text" th:field="*{ganados}" /></td>
+                </tr>
+                <tr>
+                    <td>Partidos Empatados:</td>
+                    <td><input type="text" th:field="*{empatados}" /></td>
+                </tr>
+                <tr>
+                    <td>Partidos Perdidos:</td>
+                    <td><input type="text" th:field="*{perdidos}" /></td>
+                </tr>
+                <tr>
+                    <td>Goles Favor:</td>
+                    <td><input type="text" th:field="*{golesFavor}" /></td>
+                </tr>
+                <tr>
+                    <td>Goles Contra:</td>
+                    <td><input type="text" th:field="*{golesContra}" /></td>
+                </tr>
+                <tr>
+                    <td>Puntos:</td>
+                    <td><input type="text" th:field="*{puntos}" /></td>
+                </tr>                            
+                <tr>
+                    <td colspan="2"><button type="submit">Modificar</button> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

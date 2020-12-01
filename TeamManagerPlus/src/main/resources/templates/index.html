@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Team Manager</title>
+</head>
+<body>
+<div align="center">
+    <h1>Lista Equipos</h1>
+    <a href="/new">Crear Nuevo Equipo</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Equipo ID</th>
+                <th>Nombre</th>
+                <th>Jugados</th>
+                <th>Ganados</th>
+                <th>Empatados</th>
+                <th>Perdidos</th>
+                <th>Goles Favor</th>
+                <th>Goles Contra</th>
+                <th>Puntos</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="equipo : ${listaEquipos}">
+                <td th:text="${equipo.id}">Equipo ID</td>
+                <td th:text="${equipo.nombre}">Nombre</td>
+                <td th:text="${equipo.jugados}">Jugados</td>
+                <td th:text="${equipo.ganados}">Ganados</td>
+                <td th:text="${equipo.empatados}">Empatados</td>
+                <td th:text="${equipo.perdidos}">Perdidos</td>
+                <td th:text="${equipo.golesFavor}">Goles Favor</td>
+                <td th:text="${equipo.golesContra}">Goles Contra</td>
+                <td th:text="${equipo.puntos}">Puntos</td>
+                <td>
+                    <a th:href="@{'/edit/' + ${equipo.id}}">Editar</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/delete/' + ${equipo.id}}">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>   
+</body>
+</html>
