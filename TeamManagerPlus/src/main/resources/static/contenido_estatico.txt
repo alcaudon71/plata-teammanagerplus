@@ -1,0 +1,34 @@
+Ubicacion del contenido estatico en Spring Boot
+-----------------------------------------------
+(Javascript, Imagenes, CSS)
+
+Ubicacion por defecto ---> src/main/resources/static
+
+Anywhere beneath src/main/resources/static is an appropriate place for static content such as CSS, JavaScript, and images. 
+The static directory is served from /. 
+
+For example, 
+src/main/resources/static/signin.css will be served from /signin.css 
+whereas 
+src/main/resources/static/css/signin.css will be served from /css/signin.css.
+
+Directorios validos para la carpeta /static/
+--------------------------------------------
+Meaning 
+/META-INF/resources/, 
+/resources/, 
+static/ 
+and 
+public/ 
+directories are available to serve static contents.
+
+Cambiar la Ubicacion por defecto
+--------------------------------
+
+You can customize these directories using spring.resources.static-locations in the application.properties.
+
+For example by providing this configuration:
+
+spring.resources.static-locations=classpath:/custom/
+
+You can use custom/ folder under resources/ for serving static files and access them through the URL above.
